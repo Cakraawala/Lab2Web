@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum 2 - HTML Lanjutan</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Portal Akademik Mahasiswa</h1>
+        <p>Praktikum 2: HTML Lanjutan - Tabel, Form, Semantic HTML, dan Multimedia</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Beranda</a> |
+        <a href="#tabel">Tabel Mahasiswa</a> |
+        <a href="#form-registrasi">Form Registrasi</a> |
+        <a href="#multimedia">Multimedia</a> |
+        <a href="biodata.html">Proyek Mini: Biodata</a>
+    </nav>
+    <hr>
+
+
+    <main>
+        <section id="tabel">
+            <h2>1. Tabel Data Mahasiswa</h2>
+            <article>
+                <h3>Tabel Nilai Praktikum (thead, tbody, tfoot)</h3>
+                <p>Tabel di bawah ini disusun menggunakan struktur lengkap <code>&lt;table&gt;</code>,
+                    <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, dan <code>&lt;tfoot&gt;</code> dengan
+                    penggabungan kolom menggunakan atribut <code>colspan</code>.</p>
+
+                <table border="1" cellpadding="8" cellspacing="0">
+                    <caption>Daftar Nilai Praktikum Pemrograman Web</caption>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIM</th>
+                            <th>Nama Mahasiswa</th>
+                            <th>Program Studi</th>
+                            <th>Nilai</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>312510054</td>
+                            <td>Angger Cakra Wicaksono</td>
+                            <td>Teknik Informatika</td>
+                            <td>95</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>312510001</td>
+                            <td>Andi Pratama</td>
+                            <td>Teknik Informatika</td>
+                            <td>85</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>312510002</td>
+                            <td>Budi Santoso</td>
+                            <td>Teknik Informatika</td>
+                            <td>90</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" align="center"><b>Nilai Rata-rata</b></td>
+                            <td><b>90</b></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </article>
+        </section>
+
+        <hr>
+
+        <section id="form-registrasi">
+            <h2>2. Form Registrasi Mahasiswa</h2>
+            <p>Form ini menerapkan berbagai tipe input, label terhubung (<code>for</code> dan <code>id</code>), pilihan
+                radio button, checkbox, select option, textarea, serta validasi dasar HTML (<code>required</code>,
+                <code>minlength</code>, <code>min</code>, <code>max</code>).</p>
+
+            <form action="#" method="post">
+                <label for="nama">Nama Lengkap:</label><br>
+                <input type="text" id="nama" name="nama" required minlength="3"
+                    placeholder="Masukkan nama lengkap"><br><br>
+
+                <label for="email">Alamat Email:</label><br>
+                <input type="email" id="email" name="email" required placeholder="nama@email.com"><br><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required minlength="6"
+                    placeholder="Minimal 6 karakter"><br><br>
+
+                <label for="tanggal">Tanggal Lahir:</label><br>
+                <input type="date" id="tanggal" name="tanggal" required><br><br>
+
+                <label for="umur">Umur (17 - 60 tahun):</label><br>
+                <input type="number" id="umur" name="umur" min="17" max="60" required placeholder="17-60"><br><br>
+
+                <label>Jenis Kelamin:</label><br>
+                <input type="radio" id="laki" name="jk" value="L" required>
+                <label for="laki">Laki-laki</label>
+                <input type="radio" id="perempuan" name="jk" value="P">
+                <label for="perempuan">Perempuan</label><br><br>
+
+                <label>Keahlian (Skill):</label><br>
+                <input type="checkbox" id="html" name="skill" value="HTML">
+                <label for="html">HTML</label>
+                <input type="checkbox" id="css" name="skill" value="CSS">
+                <label for="css">CSS</label>
+                <input type="checkbox" id="js" name="skill" value="JavaScript">
+                <label for="js">JavaScript</label>
+                <input type="checkbox" id="php" name="skill" value="PHP">
+                <label for="php">PHP</label><br><br>
+
+                <label for="prodi">Program Studi:</label><br>
+                <select id="prodi" name="prodi" required>
+                    <option value="">-- Pilih Program Studi --</option>
+                    <option value="TI">Teknik Informatika</option>
+                    <option value="SI">Sistem Informasi</option>
+                    <option value="TL">Teknik Lingkungan</option>
+                    <option value="TE">Teknik Elektro</option>
+                </select><br><br>
+
+                <label for="alamat">Alamat Lengkap:</label><br>
+                <textarea id="alamat" name="alamat" rows="4" cols="45" required
+                    placeholder="Tuliskan alamat domisili..."></textarea><br><br>
+
+                <button type="submit">Daftar Sekarang</button>
+                <button type="reset">Reset Form</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <section id="multimedia">
+            <h2>3. Elemen Multimedia HTML</h2>
+            <article>
+                <h3>Pemutar Audio (&lt;audio&gt;)</h3>
+                <audio controls>
+                    <source src="media/audio.mp3" type="audio/mpeg">
+                    Browser Anda tidak mendukung pemutaran elemen audio.
+                </audio>
+            </article>
+
+            <article>
+                <h3>Pemutar Video (&lt;video&gt;)</h3>
+                <video controls width="480">
+                    <source src="media/video.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutaran elemen video.
+                </video>
+            </article>
+        </section>
+
+        <hr>
+
+        <aside>
+            <h3>Informasi Tambahan</h3>
+            <p>Praktikum 2 Pemrograman Web berfokus pada penguasaan struktur semantic HTML5 murni tanpa penambahan
+                framework CSS eksternal.</p>
+        </aside>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Teknik Informatika - Universitas Pelita Bangsa | Angger Cakra Wicaksono (312510054)</p>
+    </footer>
+
+</body>
+
+</html>
